@@ -25,7 +25,7 @@ Pull the image from Docker Hub using:
 
 If you only want to compile files without using the server, you can use the following command (for example) at the root of your documentation:
 
-``docker run -t -v "$(pwd)":/web dldl/sphinx-server make html``
+``docker run -t -v "$(pwd)":/web wessenstam/sphinx-server make html``
 
 ## From source
 Clone this repository on your computer and build the image using the following command:
@@ -51,7 +51,7 @@ Autobuild is enabled by default. You may add folders and files to the ignore lis
 
 Run the following command at the root of your documentation:
 
-``docker run -itd -v "$(pwd)":/web -u $(id -u):$(id -g) -p 8000:8000 --name sphinx-server dldl/sphinx_server``
+``docker run -itd -v "$(pwd)":/web -u $(id -u):$(id -g) -p 8000:8000 --name sphinx-server wessenstam/sphinx_server``
 
 The web server will be listening on port 8000. All the files in the current directory will be mounted in the container.
 
