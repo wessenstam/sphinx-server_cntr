@@ -4,7 +4,7 @@ import sys
 from contextlib import contextmanager
 import base64
 from livereload import Server
-import BaseHTTPServer
+from http.server import BaseHTTPRequestHandlerServer,HTTPserver
 import SimpleHTTPServer
 import SocketServer
 import yaml
@@ -101,7 +101,7 @@ if __name__ == '__main__':
             key = base64.b64encode(auth)
 
             with pushd(build_folder):
-                BaseHTTPServer.test(AuthHandler, BaseHTTPServer.HTTPServer)
+                BaseHTTPServer.test(AuthHandler, HTTPServer)
         else:
             with pushd(build_folder):
                 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
